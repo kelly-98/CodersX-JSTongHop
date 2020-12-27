@@ -1,3 +1,4 @@
+-------------------------------------------------------------------------------------
 // 1.Viết hàm đảo ngược chuỗi
 // Example
 // reverse('abc') // 'cba'
@@ -5,7 +6,7 @@ function reverse(str) {
   // viết code ở đây.
   return str.split('').reverse().join('');
 }
-
+-------------------------------------------------------------------------------------
 // 2.Viết hàm để viết hoa chữ cái đầu của từng từ trong câu
 // Example
 // capitalize("abc") // "Abc"
@@ -19,22 +20,22 @@ function capitalize(str) {
     }
     return result.join(' ');
 }
-
+-------------------------------------------------------------------------------------
 // 3.Get extension file
 function getExtensionFilename(filename) {
   return filename.split('.').pop();
 }
-
+-------------------------------------------------------------------------------------
 // 4.Viết hàm lấy ra giá trị lớn nhất trong 3 số nhập vào
 function findMax(a,b,c){	
 	return (a > b) ? a : b > c ? b : c;
 }
-
+-------------------------------------------------------------------------------------
 // 5.Viết hàm kiểm tra xem một chuỗi bắt đầu bằng "Java" hay không 
 function startWith(str){
   return str.slice(0, 4) === 'Java';
 }
-
+-------------------------------------------------------------------------------------
 /*
   - 6
   - Viết hàm findMaxDiff nhận tham số là một mảng integer (mảng số nguyên)
@@ -54,7 +55,7 @@ function findMaxDiff(arr) {
   }
   return result;
 }
-
+-------------------------------------------------------------------------------------
 // 7.Viết 1 function kiểm tra số lương kí tự 'p' và 't' của 1 chuỗi có bằng nhau hay không
 function equal_pt(str) {
   let countP = 0;
@@ -71,3 +72,134 @@ function equal_pt(str) {
   }
   return countT === countP;
 }
+-------------------------------------------------------------------------------------
+// 8.Viết hàm first trả về giá trị đầu tiên của mảng, 
+nếu n được truyền vào thì trả về 1 mảng chứa n giá trị đầu tiên của mảng 
+(hoặc cả mảng nếu n lớn hơn số phần tử của mảng). Nếu n <= 0 thì trả về mảng trống.
+// Tham số:
+//	- array: mảng gốc
+//	- n: số phần tử trả về
+function first(array, n) {
+  // viết code ở đây.
+  if(n <= 0) {
+    return [];
+  }
+  return array.slice(0, n);
+}
+-------------------------------------------------------------------------------------
+// 9.Viết function omitCharAt  trả về chuỗi đã được loại bỏ ký tại vị trí n bất kỳ
+//Lưu ý cho chuỗi 'abcd' :
+// 		element    'a'|'b'|'c'|'d'
+//		index 	    0	|	1	|	2	|	3
+//  n = 1 ------------------- 'acd'
+//  n = 2 ------------------- 'abd'
+
+function omitCharAt(str, n) {
+  // viết code ở đây.	
+  strArr = str.split('');
+  strArr.splice(n, 1);
+  return strArr.join('');
+}
+-------------------------------------------------------------------------------------
+// 10.Viết hàm nhận vào 2 số a, b
+// Trả về số gần 100 nhất
+// nearestTo100(89, 180) // 89
+function nearestTo100(a, b){
+  // viết code ở đây.
+  let dffA = Math.abs(100 - a);
+  let dffB = Math.abs(100 - b);
+  if(dffA > dffB) {
+      return b;
+  } else {
+      return a;
+  }
+}
+-------------------------------------------------------------------------------------
+/* 11. Viết hàm checkInt để kiểm tra hai số nguyên được nhập vào. 
+  Nếu có 1 số âm và một số dương thì trả về true. 
+  Các trường hợp khác trả về false. 
+  Số 0 là số không âm cũng không dương
+  Tham số:
+  - number1: số nguyên thứ nhất
+  - number2: số nguyên thứ hai
+*/
+function checkInt(number1, number2) {
+  // viết code ở đây.
+  if(number1 * number2 < 0) {
+      return true;
+  }
+  return false;
+-------------------------------------------------------------------------------------
+/*
+12. Viết một hàm JavaScript có 1 tham số n trả về tuyệt đối của hiệu só đó và 13, 
+nếu số đó lớn hơn 13 trả về gấp đôi tuyệt đối của hiệu 2 số.
+Example: 
+n = 20 // return 14
+n = 5 // return 8
+*/
+function difference(n) {
+  // viết code ở đây.
+  if(n > 13) {
+      return (n - 13) * 2;
+  }
+  return 13 - n;
+}
+-------------------------------------------------------------------------------------
+/* 13.Viết hàm pyString để tạo chuỗi mới thêm "Py" trước chuỗi nhập vào. 
+Nếu chuỗi đã cho đã bắt đầu bằng "Py" thì hãy trả về chuỗi gốc (không cần thêm).
+Tham số:
+- String: chuỗi nhập vào lúc đầu.
+*/
+
+function pyString(string) {
+  // viết code ở đây.
+  let strSlice = string.slice(0, 2);
+  if(strSlice === 'Py'){
+    return string;
+  } else {
+    return 'Py' + string;
+  }
+}
+-------------------------------------------------------------------------------------
+/* 14.Viết hàm toNextChar dùng để thay thế mọi ký tự trong một chuỗi 
+thành ký tự theo sau nó trong bảng chữ cái. Ví dụ: "Hello" chuyển thành "Ifmmp"
+// Tham số:
+// - String: chuỗi nhập vào ban đầu.
+*/
+function toNextChar(str) {
+  // viết code ở đây.
+  let strArr = str.split('');
+  let res = strArr.map((item) => {
+    return String.fromCharCode(item.charCodeAt() + 1);
+  });
+  return res.join('');
+}
+-------------------------------------------------------------------------------------
+// 15.Viết hàm tạo mới một 1 string từ n ký tự từ vị trí đầu và cuối của chuỗi cũ
+// newString("1wyg5yhd45", 2) // "1w45"
+function newString(str, n){
+// viết code ở đây.
+    return str.slice(0, n) + str.slice(str.length - n);
+}
+-------------------------------------------------------------------------------------
+Viết hàm tính tổng lớn nhất của k phần tử trong mảng
+/* 16.Write a function return maximum possible sum of some of its k consecutive numbers 
+(numbers that follow each other in order.) of a given array of positive integers
+*/
+function maxOfSumChain(arr,k){
+  // write code here.
+  let result = 0;
+  for(let i = 0; i < arr.length; i++) {
+    let sum = 0;
+    for(let j = i; j < i + k; j++) {
+      sum += arr[j];
+    }
+    if(result < sum) {
+        result = sum;
+    }
+  }
+  return result;
+}
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------

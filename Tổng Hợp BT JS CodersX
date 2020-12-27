@@ -3,7 +3,6 @@
 // Example
 // reverse('abc') // 'cba'
 function reverse(str) {
-  // viết code ở đây.
   return str.split('').reverse().join('');
 }
 -------------------------------------------------------------------------------------
@@ -11,8 +10,7 @@ function reverse(str) {
 // Example
 // capitalize("abc") // "Abc"
 function capitalize(str) {
-	// viết code ở đây
-	let strArr = str.split(' ');
+    let strArr = str.split(' ');
     let result = [];
     for(let i = 0; i < strArr.length; i++)  {
         let item = strArr[i][0].toUpperCase() + strArr[i].slice(1, strArr[i].length);
@@ -45,7 +43,6 @@ function startWith(str){
   [1, -10, 5, 18, -9, 5] => 27
 */
 function findMaxDiff(arr) {
-  // viết code ở đây.
   let result = 0;
   for(let i = 0; i < arr.length - 1; i++) {
   	let dff = Math.abs(arr[i] - arr[i + 1]);
@@ -77,10 +74,9 @@ function equal_pt(str) {
 nếu n được truyền vào thì trả về 1 mảng chứa n giá trị đầu tiên của mảng 
 (hoặc cả mảng nếu n lớn hơn số phần tử của mảng). Nếu n <= 0 thì trả về mảng trống.
 // Tham số:
-//	- array: mảng gốc
-//	- n: số phần tử trả về
+// - array: mảng gốc
+// - n: số phần tử trả về
 function first(array, n) {
-  // viết code ở đây.
   if(n <= 0) {
     return [];
   }
@@ -95,7 +91,6 @@ function first(array, n) {
 //  n = 2 ------------------- 'abd'
 
 function omitCharAt(str, n) {
-  // viết code ở đây.	
   strArr = str.split('');
   strArr.splice(n, 1);
   return strArr.join('');
@@ -105,7 +100,6 @@ function omitCharAt(str, n) {
 // Trả về số gần 100 nhất
 // nearestTo100(89, 180) // 89
 function nearestTo100(a, b){
-  // viết code ở đây.
   let dffA = Math.abs(100 - a);
   let dffB = Math.abs(100 - b);
   if(dffA > dffB) {
@@ -138,7 +132,6 @@ n = 20 // return 14
 n = 5 // return 8
 */
 function difference(n) {
-  // viết code ở đây.
   if(n > 13) {
       return (n - 13) * 2;
   }
@@ -152,7 +145,6 @@ Tham số:
 */
 
 function pyString(string) {
-  // viết code ở đây.
   let strSlice = string.slice(0, 2);
   if(strSlice === 'Py'){
     return string;
@@ -187,7 +179,6 @@ Viết hàm tính tổng lớn nhất của k phần tử trong mảng
 (numbers that follow each other in order.) of a given array of positive integers
 */
 function maxOfSumChain(arr,k){
-  // write code here.
   let result = 0;
   for(let i = 0; i < arr.length; i++) {
     let sum = 0;
@@ -204,7 +195,6 @@ function maxOfSumChain(arr,k){
 18.Hãy viết một hàm để tìm một số có số lần lặp lại nhiều nhất trong một dãy các số nguyên.
 
 function findMostFrequent(arr) {
-// Viết code tại đây!
     let counts = {};
     for(let i = 0; i < arr.length; i++) {
         let num = arr[i];
@@ -224,7 +214,6 @@ function rearrangeChar(str1, str2) {
 của hiệu 2 số bất kì trong dãy số
 
 function findmaxDiff(arr){
-  // Viết code tại đây
     arr.sort((a, b) => {
       return a - b;
     });

@@ -220,5 +220,15 @@ function rearrangeChar(str1, str2) {
     return (str1.split('').sort().join('') === str2.split('').sort().join(''))
 }
 -------------------------------------------------------------------------------------
+20. Hãy viết một hàm để tìm giá trị lớn nhất có thể đạt được 
+của hiệu 2 số bất kì trong dãy số
+
+function findmaxDiff(arr){
+  // Viết code tại đây
+    arr.sort((a, b) => {
+      return a - b;
+    });
+    return arr[arr.length - 1] - arr[0];
+}
 -------------------------------------------------------------------------------------
--------------------------------------------------------------------------------------
+

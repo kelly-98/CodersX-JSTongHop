@@ -183,7 +183,7 @@ function newString(str, n){
 }
 -------------------------------------------------------------------------------------
 Viết hàm tính tổng lớn nhất của k phần tử trong mảng
-/* 16.Write a function return maximum possible sum of some of its k consecutive numbers 
+/* 17.Write a function return maximum possible sum of some of its k consecutive numbers 
 (numbers that follow each other in order.) of a given array of positive integers
 */
 function maxOfSumChain(arr,k){
@@ -199,6 +199,25 @@ function maxOfSumChain(arr,k){
     }
   }
   return result;
+}
+-------------------------------------------------------------------------------------
+18.Hãy viết một hàm để tìm một số có số lần lặp lại nhiều nhất trong một dãy các số nguyên.
+
+function findMostFrequent(arr) {
+// Viết code tại đây!
+    let counts = {};
+    for(let i = 0; i < arr.length; i++) {
+        let num = arr[i];
+        counts[num] = counts[num] != undefined ? counts[num] + 1 : 1;
+    }
+    let max = Math.max(...Object.values(counts));
+    return Object.keys(counts).filter((item) => counts[item] === max).map(item => Number(item));
+}
+-------------------------------------------------------------------------------------
+19.Hãy viết một hàm để kiểm tra xem có thể sắp xếp các kí tự 
+của 1 chuỗi String cho trước thành 1 chuỗi String cho trước khác không?
+function rearrangeChar(str1, str2) {
+    return (str1.split('').sort().join('') === str2.split('').sort().join(''))
 }
 -------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------
